@@ -8,6 +8,8 @@ namespace MovieApi.Repository
 
         public Movie GetMovieByName(string name);
 
+        public IEnumerable<Movie> GetMoviesByYear(int year);
+
         public void InsertMovie(Movie movie);
 
         public void UpdateMovie(string name ,Movie movie);

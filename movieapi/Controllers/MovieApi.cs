@@ -40,8 +40,10 @@ namespace MovieApi.Controllers
         [HttpGet("{name}", Name = "GetMovieByName")]
         public IActionResult GetMovieByName(string name)
         {
+            Movie movie = _service.GetMovieByName(name);
+
             // Find the movie with the specified id
-            var movie = _movies.Find(m => m.Title == name);
+            // var movie = _movies.Find(m => m.Title == name);
 
             if (movie == null)
             {
@@ -56,17 +58,18 @@ namespace MovieApi.Controllers
         [HttpGet("/year/{year}")]
         public IActionResult GetMoviesByYear(int year)
         {
+            IEnumerable<Movie> moviesbyyear = _service.GetMoviesByYear(year);
             // Find the movie with the specified year
-            var movie = _movies.Find(m => m.Year == year);
+            //var movie = _movies.Find(m => m.Year == year);
 
-            if (movie == null)
+            if (moviesbyyear == null)
             {
                 // Movie not found
                 return NotFound();
             }
 
             // Return the movie
-            return Ok(movie);
+            return Ok(moviesbyyear);
         }
 
         [HttpPost]
@@ -74,7 +77,8 @@ namespace MovieApi.Controllers
         {
             try {
             // Add the movie to the list
-                _movies.Add(m);
+                //_movies.Add(m);
+                _service.InsertMovie(m);
                 return CreatedAtRoute("GetMovieByName", new { name = m.Title }, m);
            } 
             catch {
@@ -86,20 +90,22 @@ namespace MovieApi.Controllers
         [HttpPut("{name}")]
         public IActionResult UpdateMovie(string name,Movie moviein)
         {
+            
             try 
             {
+                _service.UpdateMovie(moviein);
             // Find the movie with the specified id
-                foreach (Movie m in _movies)
-                {
-                    if (m.Title == name)
-                    {
-                        m.Title = moviein.Title;
-                        m.Year = moviein.Year;
-                        m.Genre = moviein.Genre;
-                        return NoContent();
-                    }
-                }
-                return BadRequest();
+                // foreach (Movie m in _movies)
+                // {
+                //     if (m.Title == name)
+                //     {
+                //         m.Title = moviein.Title;
+                //         m.Year = moviein.Year;
+                //         m.Genre = moviein.Genre;
+                //         return NoContent();
+                //     }
+                // }
+                return NoContent();
             }
             catch
             {
@@ -109,20 +115,22 @@ namespace MovieApi.Controllers
         }
 
         [HttpDelete("{name}")]
-        public IActionResult DeleteMovie(string name)
+        public IActionResult DeleteMovie(Movie name)
         {
             try
             {
+                _service.DeleteMovie(name);
                 // Find the movie with the specified id
-                foreach (Movie m in _movies)
-                {
-                    if (m.Title == name)
-                    {
-                        _movies.Remove(m);
-                        return NoContent();
-                    }
-                }
-                return BadRequest();
+                // foreach (Movie m in _movies)
+                // {
+                //     if (m.Title == name)
+                //     {
+                //         _movies.Remove(m);
+                //         return NoContent();
+                //     }
+                // }
+                // return BadRequest();
+                return NoContent();
             }
             catch
             {

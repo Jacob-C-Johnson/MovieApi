@@ -6,13 +6,17 @@ namespace MovieApi.Services
     {
         public IEnumerable<Movie> GetAll();
 
-        // public Movie GetMovieByName(string name);
+        public Movie GetMovieByName(string name);
 
-        // public void InsertMovie(Movie movie);
+        public IEnumerable<Movie> GetMoviesByYear(int genre);
 
-        // public void UpdateMovie(Movie movie);
+        public void UpdateMovie(Movie movie);
 
-        // public void DeleteMovie(Movie movie);
+        public void DeleteMovie(Movie movie);
+
+        public void InsertMovie(Movie movie);
+
+        
         
     }
 }

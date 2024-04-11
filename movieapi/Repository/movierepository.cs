@@ -46,7 +46,16 @@ namespace MovieApi.Repository
         Movies.Remove(movie);
     }
 
+    public IEnumerable<Movie> GetMoviesByYear(int year) {
+        List<Movie> movies = new List<Movie>();
+        foreach (var movie in Movies) {
+            if (movie.Year == year) {
+                movies.Add(movie);
+            }
+        }
+        return movies;
 
 
+}
 }
 }
