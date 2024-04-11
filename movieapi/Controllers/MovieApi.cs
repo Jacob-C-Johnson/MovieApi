@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using MovieApi.Models;
+using MovieApi.Services;
 
 namespace MovieApi.Controllers
 {
@@ -8,27 +10,31 @@ namespace MovieApi.Controllers
     public class MovieController : ControllerBase
     {
         private readonly List<Movie> _movies;
+        private IMovieService _service;
 
-        public MovieController()
+        public MovieController(IMovieService service)
         {
+            _service = service;
             // Initialize the list of movies
             _movies = new List<Movie>
             {
-                new Movie("Citezen Kane", 1941, "Action", 1),
-                new Movie("The Wizard of Oz", 1939, "Comedy", 2),
-                new Movie("The Godfather", 1972, "Drama", 3),
+                new Movie("Citezen Smith", 1941, "Action", 1),
+                new Movie("The Warlock of Oz", 1939, "Comedy", 2),
+                new Movie("The Grandmother", 1972, "Drama", 3),
             };
         }
 
         [HttpGet]
         public IActionResult GetMovies()
         {
-            if(_movies == null)
+            IEnumerable<Movie> list = _service.GetAll();
+
+            if(list == null)
             {
                 // No movies found
                 return NotFound();
             }
-            return Ok(_movies);
+            return Ok(list);
         }
 
         [HttpGet("{name}", Name = "GetMovieByName")]

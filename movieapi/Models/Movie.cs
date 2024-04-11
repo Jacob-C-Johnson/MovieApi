@@ -1,3 +1,4 @@
+namespace MovieApi.Models {
 public class Movie
 {
     public string Title { get; set; }
@@ -19,4 +20,5 @@ public class Movie
     {
         return $"{Title} ({Year}) - {Genre}";
     }
+}
 }

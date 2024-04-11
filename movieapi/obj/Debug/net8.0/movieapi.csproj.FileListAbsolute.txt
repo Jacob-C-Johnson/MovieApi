@@ -30,3 +30,4 @@ c:\Users\carso\source1\MovieApi\movieapi\obj\Debug\net8.0\refint\movieapi.dll
 c:\Users\carso\source1\MovieApi\movieapi\obj\Debug\net8.0\movieapi.pdb
 c:\Users\carso\source1\MovieApi\movieapi\obj\Debug\net8.0\movieapi.genruntimeconfig.cache
 c:\Users\carso\source1\MovieApi\movieapi\obj\Debug\net8.0\ref\movieapi.dll
+c:\Users\carso\source1\MovieApi\movieapi\obj\Debug\net8.0\movieapi.sourcelink.json

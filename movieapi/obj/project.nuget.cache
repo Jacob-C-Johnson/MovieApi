@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IyBOWptW7g+phGS+4HJS5f7zFuwR0G1XIa/baZaQYapK2QjtUtX2zYa8e/Iz/PwhRJYlOUyOqUXiCJr1c5vwJw==",
+  "dgSpecHash": "XNfHMhUqPcBhA+ornys7bmPTdEUVkR2IrdB/PPjWJz/Fqr2uPc2GN7g8FvrCPYkh202iy897x7vuouk1hqzDTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\carso\\source1\\MovieApi\\movieapi\\movieapi.csproj",
+  "projectFilePath": "c:\\Users\\carso\\source1\\MovieApi\\movieapi\\movieapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\carso\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\carso\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
