@@ -24,6 +24,27 @@ namespace MovieApi.Services
             return movie;
         }
 
+        public IEnumerable<Movie> GetMoviesByYear(int year)
+        {
+            IEnumerable<Movie> myList = _repo.GetMoviesByYear(year);
+            return myList;
+        }
+
+        public void InsertMovie(Movie movie)
+        {
+            _repo.InsertMovie(movie);
+        }
+
+        public void UpdateMovie(Movie movie)
+        {
+            _repo.UpdateMovie(movie.Title, movie);
+        }
+
+        public void DeleteMovie(Movie movie)
+        {
+            _repo.DeleteMovie(movie.Title, movie);
+        }
+
 
     }
 }
