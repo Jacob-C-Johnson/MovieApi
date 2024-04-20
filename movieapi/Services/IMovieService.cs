@@ -10,9 +10,9 @@ namespace MovieApi.Services
 
         public IEnumerable<Movie> GetMoviesByYear(int genre);
 
-        public void UpdateMovie(Movie movie);
+        public void UpdateMovie(string name,Movie movie);
 
-        public void DeleteMovie(Movie movie);
+        public void DeleteMovie(string name,Movie movie);
 
         public void InsertMovie(Movie movie);
 

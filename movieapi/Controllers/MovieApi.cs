@@ -93,7 +93,7 @@ namespace MovieApi.Controllers
             
             try 
             {
-                _service.UpdateMovie(moviein);
+                _service.UpdateMovie(name,moviein);
             // Find the movie with the specified id
                 // foreach (Movie m in _movies)
                 // {
@@ -115,11 +115,11 @@ namespace MovieApi.Controllers
         }
 
         [HttpDelete("{name}")]
-        public IActionResult DeleteMovie(Movie name)
+        public IActionResult DeleteMovie(string name,Movie movie)
         {
             try
             {
-                _service.DeleteMovie(name);
+                _service.DeleteMovie(name,movie);
                 // Find the movie with the specified id
                 // foreach (Movie m in _movies)
                 // {

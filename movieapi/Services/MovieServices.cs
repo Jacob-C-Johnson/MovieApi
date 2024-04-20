@@ -35,14 +35,14 @@ namespace MovieApi.Services
             _repo.InsertMovie(movie);
         }
 
-        public void UpdateMovie(Movie movie)
+        public void UpdateMovie(string name, Movie movie)
         {
-            _repo.UpdateMovie(movie.Title, movie);
+            _repo.UpdateMovie(name, movie);
         }
 
-        public void DeleteMovie(Movie movie)
+        public void DeleteMovie(string name,Movie movie)
         {
-            _repo.DeleteMovie(movie.Title, movie);
+            _repo.DeleteMovie(name, movie);
         }
 
 
